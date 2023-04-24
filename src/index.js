@@ -4,29 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
     getCocktails()
 })
 
-// function getCocktails(){
-//     const ul = document.getElementById("drink-list")
-//     fetch(URL)
-//         .then(response => response.json())
-//         .then(data => {
-//             data.drinks.forEach(drink => {
-//                 ul.innerHTML += `<li>${drink.strDrink}</li>`
-//             })
-//         })
-//         .catch(error => console.log(error))
-// }
-
-function getCocktails() {
+function getCocktails(){
     const ul = document.getElementById("drink-list")
     fetch(URL)
-      .then(response => response.json())
-      .then(data => {
-        data.drinks.forEach(drink => {
-          const li = document.createElement("li")
-          li.textContent = drink.strDrink
-          ul.appendChild(li)
+        .then(response => response.json())
+        .then(data => {
+            data.drinks.forEach(drink => {
+                ul.innerHTML += `<li>${drink.strDrink}</li>`
+            })
         })
-      })
-      .catch(error => console.log(error))
-  }
+        .catch(error => console.log(error))
+}
+
   
