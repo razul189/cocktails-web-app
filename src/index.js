@@ -3,11 +3,6 @@ const URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=cocktail"
 document.addEventListener("DOMContentLoaded", () => {
     getCocktails()
     document.getElementById('cocktails').addEventListener('click', getCocktails)
-    document.getElementById('cocktails').addEventListener('keypress', (event) => {
-        if (event.key === 'enter'){
-            getCocktails()
-        }
-    })
 })
 
 function getCocktails(){
