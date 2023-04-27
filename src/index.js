@@ -25,6 +25,12 @@ const clickableLink = () => {
     const cocktails= document.querySelectorAll("a")
     cocktails.forEach((drink) => {
         drink.addEventListener("click", displayDrink)
+        drink.addEventListener("mouseover", () => {
+            info.innerHTML = "Delicious recipe upon clicking"
+          })
+          drink.addEventListener("mouseout", () => {
+            info.innerHTML = ""
+          })
     })
 }
 
@@ -38,6 +44,23 @@ const displayDrink = (event) => {
         console.log(data)
         info.innerHTML = `<h1>${data.drinks[0].strDrink}</h1><br>
         <img src="${data.drinks[0].strDrinkThumb}" alt="${data.drinks[0].strDrink}">
+        <h2>Ingredients:</h2>
+        <ul>
+            ${getIngredientsList(data.drinks[0])}
+        </ul>
+        <h2>Instructions:</h2>
         <p>${data.drinks[0].strInstructions}</p>`
     })
+}
+
+const getIngredientsList = (drink) => {
+    let list = ""
+    for (let i = 1; i <= 15; i++) {
+        if (drink[`strIngredient${i}`]) {
+            list += `<li>${drink[`strIngredient${i}`]} - ${drink[`strMeasure${i}`]}</li>`
+        } else {
+            break
+        }
+    }
+    return list
 }
