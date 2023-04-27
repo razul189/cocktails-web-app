@@ -29,6 +29,10 @@ const clickableLink = () => {
 }
 
 const displayDrink = (event) => {
+    const info = document.getElementById("info")
+    const ul = document.getElementById("drink-list")
+    ul.innerHTML = ""
+    
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${event.target.dataset.id}`)
     .then(res => res.json())
     .then(data => {
