@@ -28,6 +28,15 @@ const clickableLink = () => {
     })
 }
 
-
+const displayDrink = (event) => {
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${event.target.dataset.id}`)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        info.innerHTML = `<h1>${data.drinks[0].strDrink}</h1><br>
+        <img src="${data.drinks[0].strDrinkThumb}" alt="${data.drinks[0].strDrink}">
+        <p>${data.drinks[0].strInstructions}</p>`
+    })
+}
 
 
