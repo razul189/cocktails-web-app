@@ -3,6 +3,11 @@ const URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=cocktail"
 document.addEventListener("DOMContentLoaded", () => {
     getCocktails()
     document.getElementById('cocktails').addEventListener('click', getCocktails)
+    document.getElementById('cocktails').addEventListener('keypress', (event) => {
+        if (event.key === 'enter'){
+            getCocktails()
+        }
+    })
 })
 
 function getCocktails(){
@@ -32,7 +37,6 @@ const displayDrink = (event) => {
     const info = document.getElementById("info")
     const ul = document.getElementById("drink-list")
     ul.innerHTML = ""
-    
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${event.target.dataset.id}`)
     .then(res => res.json())
     .then(data => {
@@ -42,5 +46,3 @@ const displayDrink = (event) => {
         <p>${data.drinks[0].strInstructions}</p>`
     })
 }
-
-
