@@ -1,4 +1,4 @@
-# Cocktail web App
+# Cocktail Web App
 
 This is a simple web app that allows users to search for cocktail images and their recipe using the TheCocktailDB API.
 
