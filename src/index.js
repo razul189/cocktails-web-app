@@ -53,3 +53,7 @@ const displayDrink = (event) => {
     })
 }
 
+const getIngredientsList = (drink) => {
+    
+}
+
