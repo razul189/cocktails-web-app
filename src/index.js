@@ -51,16 +51,5 @@ const displayDrink = (event) => {
         <h2>Instructions:</h2>
         <p>${data.drinks[0].strInstructions}</p>`
     })
-}
 
-const getIngredientsList = (drink) => {
-    let list = ""
-    for (let i = 1; i <= 15; i++) {
-        if (drink[`strIngredient${i}`]) {
-            list += `<li>${drink[`strIngredient${i}`]} - ${drink[`strMeasure${i}`]}</li>`
-        } else {
-            break
-        }
-    }
-    return list
-}
+
