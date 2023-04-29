@@ -61,7 +61,7 @@ const getIngredientsList = (drink) => {
         } else {
             break
         }
-    }
+    
     return list
 }
 
