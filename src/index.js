@@ -51,5 +51,5 @@ const displayDrink = (event) => {
         <h2>Instructions:</h2>
         <p>${data.drinks[0].strInstructions}</p>`
     })
-
+}
 
